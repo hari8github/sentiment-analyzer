@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import joblib
 
-model = tf.keras.models.load_model('sentiment_model_nlp.keras')
+model = tf.keras.models.load_model('sentiment_model_nlp.h5')
 tokenizer = joblib.load('tokenizer.pkl')
 
 st.title("Sentiment Analysis")
