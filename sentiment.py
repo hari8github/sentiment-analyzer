@@ -1,7 +1,6 @@
 import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.preprocessing.text import Tokenizer
 import joblib
 
 model = tf.keras.models.load_model('sentiment_model_nlp.keras')
