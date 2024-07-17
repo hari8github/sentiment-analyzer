@@ -1,20 +1,17 @@
 import streamlit as st
 import tensorflow as tf
-from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
+import joblib
 
-# Load your model
-model = load_model('sentiment_model_nlp.keras')
+model = tf.keras.models.load_model('sentiment_model_nlp.keras')
+tokenizer = joblib.load('tokenizer.pkl')
 
-# Streamlit app
 st.title("Sentiment Analysis")
 
 review = st.text_input("Enter your review:")
 
 if st.button("Analyze"):
-    tokenizer = Tokenizer()
-    tokenizer.fit_on_texts([review])
     sequence = tokenizer.texts_to_sequences([review])
     padded_seq = pad_sequences(sequence, maxlen=50)
     
