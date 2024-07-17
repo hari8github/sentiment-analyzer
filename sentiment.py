@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 
 # Load your model
-model = load_model('models/sentiment_model_nlp.keras')
+model = load_model('sentiment_model_nlp.keras')
 
 # Streamlit app
 st.title("Sentiment Analysis")
